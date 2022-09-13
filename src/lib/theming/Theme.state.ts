@@ -1,4 +1,4 @@
-import { LibModuleState, ModuleStatus } from "./types/generic";
+import { LibModuleState, ModuleStatus } from "../types/generic";
 
 interface ThemeState extends LibModuleState {}
 
