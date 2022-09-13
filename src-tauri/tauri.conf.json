@@ -28,8 +28,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "com.pluto-editor.dev",
+      "longDescription": "A lightweight code editor.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -55,7 +55,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 1200,
         "resizable": true,
         "title": "pluto",
         "width": 800
