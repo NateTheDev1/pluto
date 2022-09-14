@@ -14,7 +14,10 @@ function App() {
   }, []);
 
   return (
-    <div className="app-root">
+    <div
+      className="app-root h-screen w-screen"
+      style={plutoState?.Theme.getClassName("window-body")}
+    >
       <Titlebar />
       <h1 className="text-3xl">Pluto Editor</h1>
     </div>
