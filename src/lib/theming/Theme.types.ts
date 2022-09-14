@@ -1,6 +1,6 @@
 export type ThemeElement = {
   id: string;
-  defaultThemeSettings: string[];
+  defaultThemeSettings: Record<string, string>;
 };
 
 export enum THEME_AVAILABILITY {
@@ -10,4 +10,9 @@ export enum THEME_AVAILABILITY {
 
 export type ThemeManagerConfig = {
   theme_id: THEME_AVAILABILITY;
+};
+
+export type FSThemeJSON = {
+  theme_id: string;
+  elements: ThemeElement[];
 };
