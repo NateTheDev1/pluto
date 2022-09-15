@@ -3,11 +3,7 @@ import { PlutoLibContext } from "../state/PlutoLib.state";
 import { HoveredTitlebarTabState } from "../state/Titlebar.state";
 // @ts-ignore
 import Style from "style-it";
-
-export type DropdownButtonConfigItem = {
-  label: string;
-  shortcut?: string;
-};
+import { DropdownButtonConfigItem } from "../constants/pluto-titlebar.config";
 
 export const TitlebarDropdown = ({
   title,

@@ -6,6 +6,7 @@ import LogoText from "../assets/pluto-logo-text.svg";
 import { TitlebarDropdown } from "./TitlebarDropdown";
 import { PlutoLib } from "../lib/PlutoLib";
 import { PlutoLibContext } from "../state/PlutoLib.state";
+import { pluto_titlebar_config } from "../constants/pluto-titlebar.config";
 
 export const Titlebar = () => {
   useEffect(() => {
@@ -34,48 +35,15 @@ export const Titlebar = () => {
             style={plutoLib?.Theme.getClassName("titlebar.logo")}
           >
             <img src={Logo} alt="Pluto" className="h-full p-1 mt-1" />
+            <TitlebarDropdown title="File" config={pluto_titlebar_config[0]} />
+            <TitlebarDropdown title="Edit" config={pluto_titlebar_config[1]} />
+            <TitlebarDropdown title="View" config={pluto_titlebar_config[2]} />
+            <TitlebarDropdown title="Git" config={pluto_titlebar_config[3]} />
             <TitlebarDropdown
-              title="File"
-              config={{
-                "file.new": { label: "New File", shortcut: "Ctrl+N" },
-                "file.new-window": {
-                  label: "New Window",
-                  shortcut: "Ctrl+Shift+N",
-                },
-              }}
+              title="Terminal"
+              config={pluto_titlebar_config[4]}
             />
-            <TitlebarDropdown
-              title="Edit"
-              config={{
-                "edit.undo": { label: "Undo", shortcut: "Ctrl+Z" },
-                "edit.redo": { label: "Redo", shortcut: "Ctrl+Y" },
-              }}
-            />
-
-            <p
-              className="h-full px-2 transition-all hover:bg-[#FE9833] mx-1 rounded-md flex items-center"
-              style={plutoLib?.Theme.getClassName("titlebar.dropdown.header")}
-            >
-              View
-            </p>
-            <p
-              className="h-full px-2 transition-all hover:bg-[#FE9833] mx-1 rounded-md flex items-center"
-              style={plutoLib?.Theme.getClassName("titlebar.dropdown.header")}
-            >
-              Git
-            </p>
-            <p
-              className="h-full px-2 transition-all hover:bg-[#FE9833] mx-1 rounded-md flex items-center"
-              style={plutoLib?.Theme.getClassName("titlebar.dropdown.header")}
-            >
-              Terminal
-            </p>
-            <p
-              className="h-full px-2 transition-all hover:bg-[#FE9833] mx-1 rounded-md flex items-center"
-              style={plutoLib?.Theme.getClassName("titlebar.dropdown.header")}
-            >
-              Help
-            </p>
+            <TitlebarDropdown title="Help" config={pluto_titlebar_config[5]} />
           </div>
           <div
             data-tauri-drag-region
