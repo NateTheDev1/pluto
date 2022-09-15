@@ -16,7 +16,8 @@
         "scope": [
           "$APP/*",
           "$DESKTOP/*",
-          "$RESOURCE/*"
+          "$RESOURCE/*",
+          "$CONFIG/*"
         ]
       },
       "all": true

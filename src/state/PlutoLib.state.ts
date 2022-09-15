@@ -1,7 +1,4 @@
-import { atom } from "recoil";
+import React from "react";
 import { PlutoLib } from "../lib/PlutoLib";
 
-export const PlutoLibState = atom<PlutoLib | null>({
-  key: "pluto_lib_state",
-  default: null,
-});
+export const PlutoLibContext = React.createContext(new PlutoLib());
