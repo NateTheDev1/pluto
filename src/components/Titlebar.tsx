@@ -79,9 +79,8 @@ export const Titlebar = () => {
           className="opacity-50 px-4"
           style={plutoState?.Theme.getClassName("titlebar.version")}
         >
-          {plutoState?.version.version ??
-            "VUNKNK-" + plutoState?.version.gitCommitHash ??
-            "UNSTABLE"}
+          {(plutoState?.version.version + "-" ?? "VUNKNK-") +
+            plutoState?.version.gitCommitHash ?? "UNSTABLE"}
         </p>
         <div
           className="p-4 px-4 flex items-center justify-center h-full hover:bg-[#FE9833] transition-all"
