@@ -4,26 +4,51 @@
         {
             "id": "window-body",
             "defaultThemeSettings": {
-                "background": "#203339"
+                "background": "#202120"
             }
+        },
+        {
+            "id": "title-bar",
+            "defaultThemeSettings": {
+                "background": "#202120",
+                "borderBottom": "1px solid #24262A"
+            }
+        },
+        {
+            "id": "titlebar.logo",
+            "defaultThemeSettings": {}
+        },
+        {
+            "id": "titlebar.button",
+            "defaultThemeSettings": {}
         },
         {
             "id": "titlebar.icon",
             "defaultThemeSettings": {
-                "fill": "white",
-                "stroke": "white"
+                "stroke": "#bfbdbd",
+                "fill": "#bfbdbd"
+            },
+            "hover": {
+                "stroke": "#FE9833",
+                "fill": "#FE9833"
             }
         },
         {
             "id": "titlebar.dropdown.header",
             "defaultThemeSettings": {
-                "color": "white"
+                "color": "#bfbdbd"
+            },
+            "hover": {
+                "color": "#FE9833"
             }
         },
         {
             "id": "titlebar.version",
             "defaultThemeSettings": {
-                "color": "white"
+                "color": "#bfbdbd"
+            },
+            "hover": {
+                "color": "#FE9833"
             }
         }
     ]
