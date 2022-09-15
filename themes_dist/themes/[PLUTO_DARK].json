@@ -1,0 +1,30 @@
+{
+    "theme_id": "PLUTO_DARK",
+    "elements": [
+        {
+            "id": "window-body",
+            "defaultThemeSettings": {
+                "background": "#203339"
+            }
+        },
+        {
+            "id": "titlebar.icon",
+            "defaultThemeSettings": {
+                "fill": "white",
+                "stroke": "white"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.header",
+            "defaultThemeSettings": {
+                "color": "white"
+            }
+        },
+        {
+            "id": "titlebar.version",
+            "defaultThemeSettings": {
+                "color": "white"
+            }
+        }
+    ]
+}

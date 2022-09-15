@@ -27,10 +27,11 @@ export const TitlebarDropdown = ({
           {hoveredState === title && (
             <div className="bg-[#393939] w-96 top-9 absolute rounded-lg">
               {Object.entries(config).map(([k, val], key) => (
-                <div className="p-4 hover:opacity-30 transition-all cursor-pointer hover:bg-[#202120]">
-                  <p key={key} className="w-full text-white">
-                    {val}
-                  </p>
+                <div
+                  key={key}
+                  className="p-4 hover:opacity-30 transition-all cursor-pointer hover:bg-[#202120]"
+                >
+                  <p className="w-full text-white">{val}</p>
                 </div>
               ))}
             </div>

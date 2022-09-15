@@ -2,13 +2,15 @@
   "name": "pluto",
   "private": true,
   "version": "0.1.0-alpha",
-  "type": "module",
   "scripts": {
-    "gitinfo": "node ./scripts/git-info.js",
+    "setup": "concurrently 'npm:theme-install' 'npm:gitinfo'",
+    "watch:themes": "watch 'ts-node --esm  --project ./scripts/tsconfig.json ./scripts/move-themes.ts' ./themes_dist/themes",
+    "theme-install": "ts-node --esm  --project ./scripts/tsconfig.json ./scripts/move-themes.ts",
+    "gitinfo": "ts-node --esm  --project ./scripts/tsconfig.json ./scripts/git-info.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri",
+    "tauri": "npm run setup && tauri",
     "prestart": "npm run gitinfo"
   },
   "dependencies": {
@@ -19,14 +21,18 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.5",
+    "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.7.10",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.10",
+    "concurrently": "^7.4.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
+    "ts-node": "^10.9.1",
     "typescript": "^4.6.4",
-    "vite": "^3.0.2"
+    "vite": "^3.0.2",
+    "watch": "^1.0.2"
   }
 }

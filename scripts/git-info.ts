@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
 
-const execSyncWrapper = (command) => {
+const execSyncWrapper = (command: any) => {
   let stdout = null;
   try {
     stdout = execSync(command).toString().trim();
