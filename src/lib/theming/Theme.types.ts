@@ -1,6 +1,7 @@
 export type ThemeElement = {
   id: string;
   defaultThemeSettings: Record<string, string>;
+  hover: Record<string, string>;
 };
 
 export enum THEME_AVAILABILITY {

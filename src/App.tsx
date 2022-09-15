@@ -19,7 +19,6 @@ function App() {
       style={plutoState?.Theme.getClassName("window-body")}
     >
       <Titlebar />
-      <h1 className="text-3xl">Pluto Editor</h1>
     </div>
   );
 }

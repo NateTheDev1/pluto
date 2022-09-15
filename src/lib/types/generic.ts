@@ -11,3 +11,9 @@ export enum ModuleStatus {
   STOPPED,
   COMPLETED,
 }
+
+export type AppVersion = {
+  gitBranch: string;
+  gitCommitHash: string;
+  version: string;
+};
