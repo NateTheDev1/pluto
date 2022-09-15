@@ -37,11 +37,20 @@ export const Titlebar = () => {
             <TitlebarDropdown
               title="File"
               config={{
-                "file.new": "New File",
-                "file.new-window": "New Window",
+                "file.new": { label: "New File", shortcut: "Ctrl+N" },
+                "file.new-window": {
+                  label: "New Window",
+                  shortcut: "Ctrl+Shift+N",
+                },
               }}
             />
-            <TitlebarDropdown title="Edit" config={{ "edit.undo": "Undo" }} />
+            <TitlebarDropdown
+              title="Edit"
+              config={{
+                "edit.undo": { label: "Undo", shortcut: "Ctrl+Z" },
+                "edit.redo": { label: "Redo", shortcut: "Ctrl+Y" },
+              }}
+            />
 
             <p
               className="h-full px-2 transition-all hover:bg-[#FE9833] mx-1 rounded-md flex items-center"
@@ -82,7 +91,7 @@ export const Titlebar = () => {
               className="opacity-50 px-4"
               style={plutoLib?.Theme.getClassName("titlebar.version")}
             >
-              {(plutoLib?.version.version + "-" ?? "VUNKNK-") +
+              {(plutoLib?.version?.version + "-" ?? "VUNKNK-") +
                 plutoLib?.version.gitCommitHash ?? "UNSTABLE"}
             </p>
             <div

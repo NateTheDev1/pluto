@@ -11,14 +11,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "npm run setup && tauri",
-    "prestart": "npm run gitinfo"
+    "tauri": "npm run setup && tauri"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recoil": "^0.7.5"
+    "recoil": "^0.7.5",
+    "style-it": "^2.1.4"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.5",
@@ -26,6 +26,7 @@
     "@types/node": "^18.7.10",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.10",
     "concurrently": "^7.4.0",

@@ -34,13 +34,37 @@
             }
         },
         {
+            "id": "titlebar.dropdown",
+            "defaultThemeSettings": {
+                "background": "#393939"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.item",
+            "defaultThemeSettings": {},
+            "hover": {
+                "background": "#202120"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.item.text",
+            "defaultThemeSettings": {
+                "color": "white"
+            }
+        },
+        {
             "id": "titlebar.dropdown.header",
             "defaultThemeSettings": {
                 "color": "#bfbdbd"
             },
             "hover": {
-                "color": "#FE9833"
+                "background": "#FE9833"
             }
+        },
+        {
+            "id": "titlebar.dropdown.header.text",
+            "defaultThemeSettings": {},
+            "hover": {}
         },
         {
             "id": "titlebar.version",

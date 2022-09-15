@@ -52,4 +52,15 @@ export class ThemeManager {
 
     return theme_element.defaultThemeSettings;
   }
+
+  public getHoverClassName(id: string) {
+    const theme_element = this.theme_elements.find((x) => x.id === id);
+
+    if (!theme_element) {
+      console.warn("Requesting theme for non-configured element");
+      return {};
+    }
+
+    return theme_element.hover;
+  }
 }
