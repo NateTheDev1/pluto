@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { PlutoLibState } from "../state/PlutoLib.state";
 
+import Logo from "../assets/pluto-logo-icon.svg";
+
 export const Titlebar = () => {
   const [plutoState, setPlutoState] = useRecoilState(PlutoLibState);
 
@@ -21,16 +23,57 @@ export const Titlebar = () => {
   return (
     <div
       data-tauri-drag-region
-      className="h-[35px] flex justify-between"
+      className="h-[40px] flex justify-between"
       style={plutoState?.Theme.getClassName("title-bar")}
     >
-      <div className="left"></div>
+      <div
+        className="left p-1 ml-2 flex items-center"
+        style={plutoState?.Theme.getClassName("titlebar.logo")}
+      >
+        <img src={Logo} alt="Pluto" className="h-full" />
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          File
+        </p>
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          Edit
+        </p>
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          View
+        </p>
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          Git
+        </p>
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          Terminal
+        </p>
+        <p
+          className="h-full px-2 transition-all hover:bg-[#24262A] mx-1 rounded-md flex items-center"
+          style={plutoState?.Theme.getClassName("titlebar.dropdown.header")}
+        >
+          Help
+        </p>
+      </div>
       <div className="middle"></div>
       <div className="right flex">
         <div
           id="titlebar-minimize"
-          className="p-4 w-12 flex items-center justify-center h-full hover:bg-[#7e57c2] transition-all"
-          style={plutoState?.Theme.getClassName("title-bar-button")}
+          className="p-4 px-4 flex items-center justify-center h-full hover:bg-[#24262A] transition-all"
+          style={plutoState?.Theme.getClassName("titlebar.button")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +81,18 @@ export const Titlebar = () => {
             height="0.9em"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 1024 1024"
-            style={plutoState?.Theme.getClassName("title-bar-icon")}
+            style={plutoState?.Theme.getClassName("titlebar.icon")}
           >
             <path
-              style={plutoState?.Theme.getClassName("title-bar-icon")}
+              style={plutoState?.Theme.getClassName("titlebar.icon")}
               d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
             />
           </svg>
         </div>
         <div
           id="titlebar-maximize"
-          className="p-4 w-12 flex items-center justify-center h-full hover:bg-[#7e57c2] transition-all"
-          style={plutoState?.Theme.getClassName("title-bar-button")}
+          className="p-4 px-4 flex items-center justify-center h-full hover:bg-[#24262A] transition-all"
+          style={plutoState?.Theme.getClassName("titlebar.button")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,18 +100,18 @@ export const Titlebar = () => {
             height="0.9em"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
-            style={plutoState?.Theme.getClassName("title-bar-icon")}
+            style={plutoState?.Theme.getClassName("titlebar.icon")}
           >
             <path
-              style={plutoState?.Theme.getClassName("title-bar-icon")}
+              style={plutoState?.Theme.getClassName("titlebar.icon")}
               d="M5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v12.5A2.75 2.75 0 0 1 18.25 21H5.75A2.75 2.75 0 0 1 3 18.25V5.75A2.75 2.75 0 0 1 5.75 3Zm0 1.5c-.69 0-1.25.56-1.25 1.25v12.5c0 .69.56 1.25 1.25 1.25h12.5c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25H5.75Z"
             />
           </svg>
         </div>
         <div
-          className="p-4 w-12 flex items-center justify-center h-full hover:bg-red-600 transition-all"
+          className="p-4 px-4 flex items-center justify-center h-full hover:bg-red-600 transition-all"
           id="titlebar-close"
-          style={plutoState?.Theme.getClassName("title-bar-button")}
+          style={plutoState?.Theme.getClassName("titlebar.button")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

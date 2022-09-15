@@ -2,8 +2,8 @@ import ReactDOM from "react-dom/client";
 
 import { RecoilRoot } from "recoil";
 
+import "./styles/fonts.css";
 import "./index.css";
-import "./styles/titlebar.css";
 
 import App from "./App";
 
