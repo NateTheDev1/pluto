@@ -1,29 +1,47 @@
 import { Titlebar } from "./components/Titlebar";
-import { PlutoLibContext } from "./state/PlutoLib.state";
+import { PlutoLibContext, PlutoUpdateEmitter } from "./state/PlutoLib.state";
 import Modal from "react-modal";
 import { ModalProvider } from "./components/modals/ModalProvider";
+import { useContext, useEffect, useState } from "react";
+import { PlutoLib } from "./lib/PlutoLib";
 
 Modal.setAppElement("#root");
 
 const App = () => {
+  const [plutoLib, setPlutoLib] = useState<PlutoLib>();
+
+  useEffect(() => {
+    PlutoUpdateEmitter.on("UPDATED", (data) => {
+      init();
+    });
+
+    if (!plutoLib) {
+      init();
+    }
+  }, []);
+
+  const init = async () => {
+    const lib = new PlutoLib();
+
+    await lib.init();
+
+    setPlutoLib(lib);
+  };
+
   return (
-    <PlutoLibContext.Consumer>
-      {(plutoLib) =>
-        !plutoLib.version ? (
-          <></>
-        ) : (
-          <>
-            <div
-              className="app-root h-screen w-screen"
-              style={plutoLib?.Theme.getClassName("window-body")}
-            >
-              <Titlebar />
-            </div>
-            <ModalProvider />
-          </>
-        )
-      }
-    </PlutoLibContext.Consumer>
+    <PlutoLibContext.Provider value={plutoLib!}>
+      {plutoLib?.version && (
+        <>
+          <div
+            className="app-root h-screen w-screen"
+            style={plutoLib?.Theme.getClassName("window-body")}
+          >
+            <Titlebar />
+          </div>
+          <ModalProvider />
+        </>
+      )}
+    </PlutoLibContext.Provider>
   );
 };
 

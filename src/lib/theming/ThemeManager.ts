@@ -12,12 +12,14 @@ const DEFAULT_CONFIG: ThemeManagerConfig = {
 };
 
 export class ThemeManager {
-  state: ThemeState;
-  config: ThemeManagerConfig;
+  state!: ThemeState;
+  config!: ThemeManagerConfig;
 
   theme_elements!: ThemeElement[];
 
-  constructor(config: ThemeManagerConfig = DEFAULT_CONFIG) {
+  constructor() {}
+
+  async init(config: ThemeManagerConfig = DEFAULT_CONFIG) {
     this.config = { ...config };
 
     this.theme_elements = [];
@@ -26,10 +28,10 @@ export class ThemeManager {
 
     this.state.status = ModuleStatus.INITIALIZING;
 
-    this.on_theme_init();
+    await this.on_theme_init();
   }
 
-  private async on_theme_init() {
+  async on_theme_init() {
     const elements: any = await theme_reader(this.config);
 
     if (!elements) {

@@ -1,6 +1,6 @@
 import { fs } from "@tauri-apps/api";
 import { BaseDirectory } from "@tauri-apps/api/fs";
-import { configDir } from "@tauri-apps/api/path";
+import { configDir, resourceDir } from "@tauri-apps/api/path";
 import { THEME_AVAILABILITY } from "./theming/Theme.types";
 import { ThemeManager } from "./theming/ThemeManager";
 import { AppVersion, PlutoSettings } from "./types/generic";
@@ -10,20 +10,27 @@ export class PlutoLib {
   version!: AppVersion;
   Theme!: ThemeManager;
 
-  constructor() {
-    const tm = new ThemeManager({ theme_id: THEME_AVAILABILITY.PLUTO_DARK });
+  constructor() {}
+
+  async init() {
+    await this.load_version();
+    await this.settings_check();
+
+    const tm = new ThemeManager();
+
+    await tm.init({ theme_id: this.settings?.selected_theme! });
 
     this.Theme = tm;
-
-    this.load_version();
-    this.settings_check();
   }
 
   async settings_check() {
     let hasSettings = false;
 
     try {
-      const configFiles = await fs.readDir(await configDir());
+      const configFiles = await fs.readDir("", {
+        dir: BaseDirectory.Resource,
+        recursive: false,
+      });
 
       configFiles.forEach((x) => {
         if (x.name != null && x.name === "pluto-settings.json") {
@@ -31,6 +38,7 @@ export class PlutoLib {
         }
       });
     } catch (e) {
+      console.error(e);
       console.info("No Settings Config Found. Starting Build");
     }
 
@@ -43,20 +51,32 @@ export class PlutoLib {
       this.settings = stngs;
 
       await fs.writeFile("pluto-settings.json", JSON.stringify(stngs), {
-        dir: BaseDirectory.Config,
+        dir: BaseDirectory.Resource,
       });
     } else {
       await this.load_settings();
     }
-
-    const tm = new ThemeManager({ theme_id: THEME_AVAILABILITY.PLUTO_DARK });
-
-    this.Theme = tm;
   }
 
-  async load_settings() {}
+  async load_settings() {
+    const setting = await fs.readTextFile("pluto-settings.json", {
+      dir: BaseDirectory.Resource,
+    });
 
-  async save_settings() {}
+    this.settings = JSON.parse(setting);
+  }
+
+  async save_settings() {
+    await fs.writeTextFile(
+      "pluto-settings.json",
+      JSON.stringify(this.settings),
+      {
+        dir: BaseDirectory.Resource,
+      }
+    );
+
+    this.settings_check();
+  }
 
   async load_version() {
     const ver: AppVersion = JSON.parse(

@@ -1,1 +1,127 @@
-{}
+{
+    "theme_id": "PLUTO_DARK",
+    "elements": [
+        {
+            "id": "window-body",
+            "defaultThemeSettings": {
+                "background": "white"
+            }
+        },
+        {
+            "id": "title-bar",
+            "defaultThemeSettings": {
+                "background": "#223338",
+                "borderBottom": "1px solid #24262A"
+            }
+        },
+        {
+            "id": "titlebar.logo",
+            "defaultThemeSettings": {}
+        },
+        {
+            "id": "titlebar.button",
+            "defaultThemeSettings": {},
+            "hover": {
+                "background": "#FE9833"
+            }
+        },
+        {
+            "id": "titlebar.icon",
+            "defaultThemeSettings": {
+                "stroke": "#bfbdbd",
+                "fill": "#bfbdbd"
+            },
+            "hover": {
+                "stroke": "#FE9833",
+                "fill": "#FE9833"
+            }
+        },
+        {
+            "id": "titlebar.dropdown",
+            "defaultThemeSettings": {
+                "background": "#223338",
+                "boxShadow": "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.item",
+            "defaultThemeSettings": {},
+            "hover": {
+                "opacity:": "0.75"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.item.text",
+            "defaultThemeSettings": {
+                "color": "white"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.header",
+            "defaultThemeSettings": {
+                "color": "#bfbdbd"
+            },
+            "hover": {
+                "background": "#FE9833"
+            }
+        },
+        {
+            "id": "titlebar.dropdown.header.text",
+            "defaultThemeSettings": {},
+            "hover": {}
+        },
+        {
+            "id": "titlebar.version",
+            "defaultThemeSettings": {
+                "color": "#bfbdbd"
+            },
+            "hover": {
+                "color": "#FE9833"
+            }
+        },
+        {
+            "id": "modal",
+            "defaultThemeSettings": {
+                "background": "#223338",
+                "color": "white",
+                "border": "1px solid #24262A",
+                "boxShadow": "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+            }
+        },
+        {
+            "id": "modal.icons.icon",
+            "defaultThemeSettings": {
+                "fill": "white",
+                "background": "#223338"
+            },
+            "hover": {
+                "opacity": "0.5"
+            }
+        },
+        {
+            "id": "modal.link",
+            "defaultThemeSettings": {
+                "color": "#FE9833"
+            }
+        },
+        {
+            "id": "modal.settings.left",
+            "defaultThemeSettings": {
+                "background": "#182529"
+            }
+        },
+        {
+            "id": "modal.settings.tab",
+            "defaultThemeSettings": {},
+            "hover": {
+                "background": "#FE9833"
+            }
+        },
+        {
+            "id": "modal.settings.theme-select",
+            "defaultThemeSettings": {
+                "color": "black"
+            }
+        }
+    ]
+}

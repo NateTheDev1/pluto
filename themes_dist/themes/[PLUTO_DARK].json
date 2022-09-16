@@ -109,6 +109,20 @@
             "defaultThemeSettings": {
                 "background": "#182529"
             }
+        },
+        {
+            "id": "modal.settings.tab",
+            "defaultThemeSettings": {},
+            "hover": {
+                "background": "#FE9833"
+            }
+        },
+        {
+            "id": "modal.settings.theme-select",
+            "defaultThemeSettings": {
+                "background": "#182529",
+                "color": "white"
+            }
         }
     ]
 }
