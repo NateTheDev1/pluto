@@ -65,11 +65,12 @@
       {
         "decorations": false,
         "height": 1200,
-        "width": 600,
+        "width": 800,
         "resizable": true,
         "title": "pluto",
         "minHeight": 500,
-        "minWidth": 500
+        "minWidth": 900,
+        "center": true
       }
     ]
   }

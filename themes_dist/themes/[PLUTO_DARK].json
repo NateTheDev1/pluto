@@ -4,13 +4,13 @@
         {
             "id": "window-body",
             "defaultThemeSettings": {
-                "background": "#202120"
+                "background": "#223338"
             }
         },
         {
             "id": "title-bar",
             "defaultThemeSettings": {
-                "background": "#202120",
+                "background": "#223338",
                 "borderBottom": "1px solid #24262A"
             }
         },
@@ -20,7 +20,10 @@
         },
         {
             "id": "titlebar.button",
-            "defaultThemeSettings": {}
+            "defaultThemeSettings": {},
+            "hover": {
+                "background": "#FE9833"
+            }
         },
         {
             "id": "titlebar.icon",
@@ -36,14 +39,15 @@
         {
             "id": "titlebar.dropdown",
             "defaultThemeSettings": {
-                "background": "#393939"
+                "background": "#223338",
+                "boxShadow": "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
             }
         },
         {
             "id": "titlebar.dropdown.item",
             "defaultThemeSettings": {},
             "hover": {
-                "background": "#202120"
+                "opacity:": "0.75"
             }
         },
         {
@@ -73,6 +77,37 @@
             },
             "hover": {
                 "color": "#FE9833"
+            }
+        },
+        {
+            "id": "modal",
+            "defaultThemeSettings": {
+                "background": "#223338",
+                "color": "white",
+                "border": "1px solid #24262A",
+                "boxShadow": "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+            }
+        },
+        {
+            "id": "modal.icons.icon",
+            "defaultThemeSettings": {
+                "fill": "white",
+                "background": "#223338"
+            },
+            "hover": {
+                "opacity": "0.5"
+            }
+        },
+        {
+            "id": "modal.link",
+            "defaultThemeSettings": {
+                "color": "#FE9833"
+            }
+        },
+        {
+            "id": "modal.settings.left",
+            "defaultThemeSettings": {
+                "background": "#182529"
             }
         }
     ]
