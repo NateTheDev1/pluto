@@ -64,11 +64,12 @@
     "windows": [
       {
         "decorations": false,
-        "fullscreen": false,
         "height": 1200,
+        "width": 600,
         "resizable": true,
         "title": "pluto",
-        "width": 800
+        "minHeight": 500,
+        "minWidth": 500
       }
     ]
   }

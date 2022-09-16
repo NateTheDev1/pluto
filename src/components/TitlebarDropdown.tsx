@@ -1,6 +1,9 @@
 import { useRecoilState } from "recoil";
 import { PlutoLibContext } from "../state/PlutoLib.state";
-import { HoveredTitlebarTabState } from "../state/Titlebar.state";
+import {
+  ClickedDropdownItemEmitter,
+  HoveredTitlebarTabState,
+} from "../state/Titlebar.state";
 // @ts-ignore
 import Style from "style-it";
 import { DropdownButtonConfigItem } from "../constants/pluto-titlebar.config";
@@ -63,6 +66,11 @@ export const TitlebarDropdown = ({
                       "titlebar.dropdown.item"
                     )}
                     key={key}
+                    onClick={() =>
+                      ClickedDropdownItemEmitter.emit("ITEM_CLICKED", {
+                        dropdownKey: k,
+                      })
+                    }
                     className="p-4 flex items-center justify-between text-sm hover:opacity-30 transition-all cursor-pointer"
                   >
                     <p

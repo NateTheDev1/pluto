@@ -68,8 +68,8 @@ export const Titlebar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="0.9em"
-                height="0.9em"
+                width="18px"
+                height="18px"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
                 style={plutoLib?.Theme.getClassName("titlebar.icon")}
@@ -91,8 +91,8 @@ export const Titlebar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="0.9em"
-                height="0.9em"
+                width="15px"
+                height="15px"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 1024 1024"
                 style={plutoLib?.Theme.getClassName("titlebar.icon")}
@@ -110,8 +110,8 @@ export const Titlebar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="0.9em"
-                height="0.9em"
+                width="15px"
+                height="15px"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
                 style={plutoLib?.Theme.getClassName("titlebar.icon")}
@@ -129,8 +129,8 @@ export const Titlebar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1.1em"
-                height="1.1em"
+                width="22px"
+                height="22px"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 36 36"
               >
