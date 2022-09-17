@@ -27,16 +27,19 @@ export class PlutoLib {
     let hasSettings = false;
 
     try {
-      const configFiles = await fs.readDir("", {
+      // configFiles.forEach((x) => {
+      //   if (x.name != null && x.name === "pluto-settings.json") {
+      //     hasSettings = true;
+      //   }
+      // });
+
+      const file = await fs.readTextFile("_up_/resources/pluto-settings.json", {
         dir: BaseDirectory.Resource,
-        recursive: false,
       });
 
-      configFiles.forEach((x) => {
-        if (x.name != null && x.name === "pluto-settings.json") {
-          hasSettings = true;
-        }
-      });
+      if (file) {
+        hasSettings = true;
+      }
     } catch (e) {
       console.error(e);
       console.info("No Settings Config Found. Starting Build");
@@ -50,25 +53,32 @@ export class PlutoLib {
 
       this.settings = stngs;
 
-      await fs.writeFile("pluto-settings.json", JSON.stringify(stngs), {
-        dir: BaseDirectory.Resource,
-      });
+      await fs.writeFile(
+        "_up_/resources/pluto-settings.json",
+        JSON.stringify(stngs),
+        {
+          dir: BaseDirectory.Resource,
+        }
+      );
     } else {
       await this.load_settings();
     }
   }
 
   async load_settings() {
-    const setting = await fs.readTextFile("pluto-settings.json", {
-      dir: BaseDirectory.Resource,
-    });
+    const setting = await fs.readTextFile(
+      "_up_/resources/pluto-settings.json",
+      {
+        dir: BaseDirectory.Resource,
+      }
+    );
 
     this.settings = JSON.parse(setting);
   }
 
   async save_settings() {
     await fs.writeTextFile(
-      "pluto-settings.json",
+      "_up_/resources/pluto-settings.json",
       JSON.stringify(this.settings),
       {
         dir: BaseDirectory.Resource,
@@ -80,7 +90,7 @@ export class PlutoLib {
 
   async load_version() {
     const ver: AppVersion = JSON.parse(
-      await fs.readTextFile("version.json", {
+      await fs.readTextFile("_up_/resources/version.json", {
         dir: BaseDirectory.Resource,
       })
     );

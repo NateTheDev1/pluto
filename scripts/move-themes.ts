@@ -35,5 +35,11 @@ const copyRecursiveSync = (src: string, dest: string) => {
   console.log(`Moved ${src} to ${dest}`);
 };
 
-copyRecursiveSync("./themes_dist/themes", "./src-tauri/target/debug/themes");
-copyRecursiveSync("./themes_dist/themes", "./src-tauri/target/release/themes");
+copyRecursiveSync(
+  "./resources/themes",
+  "./src-tauri/target/debug/_up_/resources/themes"
+);
+copyRecursiveSync(
+  "./resources/themes",
+  "./src-tauri/target/release/_up_/resources/themes"
+);

@@ -1,11 +1,11 @@
 {
   "name": "pluto",
   "private": true,
-  "version": "0.1.2-alpha",
+  "version": "0.1.3-alpha",
   "scripts": {
     "setup": "concurrently 'npm:theme-install' 'npm:gitinfo'",
-    "watch-mac:themes": "watch 'npm run theme-install' ./themes_dist/themes",
-    "watch-win:themes": "watch \"npm run theme-install\" ./themes_dist/themes",
+    "watch-mac:themes": "watch 'npm run theme-install' ./_up_/resources/themes",
+    "watch-win:themes": "watch \"npm run theme-install\" ./_up_/resources/themes",
     "theme-install": "ts-node --esm  --project ./scripts/tsconfig.json ./scripts/move-themes.ts",
     "gitinfo": "ts-node --esm  --project ./scripts/tsconfig.json ./scripts/git-info.ts",
     "dev": "vite",

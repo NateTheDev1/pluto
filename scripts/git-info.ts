@@ -25,12 +25,12 @@ const main = () => {
   const fileContents = JSON.stringify(obj, null, 2);
 
   fs.writeFileSync(
-    path.resolve("src-tauri", "target/debug/version.json"),
+    path.resolve("src-tauri", "target/debug/_up_/resources/version.json"),
     fileContents
   );
 
   fs.writeFileSync(
-    path.resolve("src-tauri", "target/release/version.json"),
+    path.resolve("src-tauri", "target/release/_up_/resources/version.json"),
     fileContents
   );
 

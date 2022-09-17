@@ -10,7 +10,9 @@ import {
 export const theme_reader = async (
   config: ThemeManagerConfig
 ): Promise<ThemeElement[]> => {
-  const filePath = `themes/[${THEME_AVAILABILITY[config.theme_id]}].json`;
+  const filePath = `_up_/resources/themes/[${
+    THEME_AVAILABILITY[config.theme_id]
+  }].json`;
   console.info("Attempting Load From " + filePath);
 
   let data!: FSThemeJSON;
