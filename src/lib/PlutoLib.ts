@@ -1,19 +1,24 @@
 import { fs } from "@tauri-apps/api";
 import { BaseDirectory } from "@tauri-apps/api/fs";
-import { configDir, resourceDir } from "@tauri-apps/api/path";
 import { THEME_AVAILABILITY } from "./theming/Theme.types";
 import { ThemeManager } from "./theming/ThemeManager";
 import { AppVersion, PlutoSettings } from "./types/generic";
-import { forage } from "@tauri-apps/tauri-forage";
+import { Store } from "tauri-plugin-store-api";
 
 export class PlutoLib {
+  store!: Store;
   settings?: PlutoSettings;
   version!: AppVersion;
   Theme!: ThemeManager;
 
-  constructor() {}
+  constructor() {
+    this.store = new Store(".pluto_settings.json");
+
+    console.info("User Settings Store: " + this.store.path);
+  }
 
   async init() {
+    await this.store.save();
     await this.load_version();
     await this.settings_check();
 
@@ -25,7 +30,7 @@ export class PlutoLib {
   }
 
   async settings_check() {
-    let hasSettings = await forage.getItem({ key: "settings" })();
+    let hasSettings = await this.store.get("settings");
 
     if (!hasSettings) {
       console.info("No Settings Config Found. Starting Build");
@@ -37,26 +42,28 @@ export class PlutoLib {
 
       this.settings = stngs;
 
-      await forage.setItem({
-        key: "settings",
-        value: JSON.stringify(stngs),
-      });
+      await this.store.set("settings", JSON.stringify(stngs));
     } else {
       await this.load_settings();
     }
   }
 
   async load_settings() {
-    const setting = await forage.getItem({ key: "settings" })();
+    const setting = await this.store.get("settings");
 
     this.settings = JSON.parse(setting as unknown as string);
   }
 
+  async reset_settings() {
+    await this.store.reset();
+
+    this.settings_check();
+  }
+
   async save_settings() {
-    await forage.setItem({
-      key: "settings",
-      value: JSON.stringify(this.settings),
-    })();
+    await this.store.set("settings", JSON.stringify(this.settings));
+
+    await this.store.save();
 
     this.settings_check();
   }

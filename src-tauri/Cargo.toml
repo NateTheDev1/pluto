@@ -19,6 +19,10 @@ serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "1.0.0", features = ["api-all", "devtools"] }
 window-shadows = "0.1.0"
 
+[dependencies.tauri-plugin-store]
+git = "https://github.com/tauri-apps/tauri-plugin-store"
+branch = "dev"
+
 [features]
 # by default Tauri runs in production mode
 # when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL

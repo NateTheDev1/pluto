@@ -80,7 +80,7 @@
     "windows": [
       {
         "decorations": false,
-        "height": 1200,
+        "height": 900,
         "width": 800,
         "resizable": true,
         "title": "pluto",
