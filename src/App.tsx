@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { ModalProvider } from "./components/modals/ModalProvider";
 import { useContext, useEffect, useState } from "react";
 import { PlutoLib } from "./lib/PlutoLib";
+import { NavButtonBar } from "./components/NavButtonBar";
 
 Modal.setAppElement("#root");
 
@@ -37,6 +38,9 @@ const App = () => {
             style={plutoLib?.Theme.getClassName("window-body")}
           >
             <Titlebar />
+            <div className="flex w-full h-full">
+              <NavButtonBar />
+            </div>
           </div>
           <ModalProvider />
         </>

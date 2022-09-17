@@ -123,6 +123,18 @@
                 "background": "#182529",
                 "color": "white"
             }
+        },
+        {
+            "id": "nav-button-bar",
+            "defaultThemeSettings": {
+                "borderRight": "1px solid #24262A"
+            }
+        },
+        {
+            "id": "nav-button-bar-container",
+            "defaultThemeSettings": {
+                "borderLeft": "2px solid #FE9833"
+            }
         }
     ]
 }
