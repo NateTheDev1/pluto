@@ -4,6 +4,7 @@ import { configDir, resourceDir } from "@tauri-apps/api/path";
 import { THEME_AVAILABILITY } from "./theming/Theme.types";
 import { ThemeManager } from "./theming/ThemeManager";
 import { AppVersion, PlutoSettings } from "./types/generic";
+import { forage } from "@tauri-apps/tauri-forage";
 
 export class PlutoLib {
   settings?: PlutoSettings;
@@ -24,28 +25,11 @@ export class PlutoLib {
   }
 
   async settings_check() {
-    let hasSettings = false;
-
-    try {
-      // configFiles.forEach((x) => {
-      //   if (x.name != null && x.name === "pluto-settings.json") {
-      //     hasSettings = true;
-      //   }
-      // });
-
-      const file = await fs.readTextFile("_up_/resources/pluto-settings.json", {
-        dir: BaseDirectory.Resource,
-      });
-
-      if (file) {
-        hasSettings = true;
-      }
-    } catch (e) {
-      console.error(e);
-      console.info("No Settings Config Found. Starting Build");
-    }
+    let hasSettings = await forage.getItem({ key: "settings" })();
 
     if (!hasSettings) {
+      console.info("No Settings Config Found. Starting Build");
+
       const stngs: PlutoSettings = {
         autoUpdate: true,
         selected_theme: THEME_AVAILABILITY.PLUTO_DARK,
@@ -53,37 +37,26 @@ export class PlutoLib {
 
       this.settings = stngs;
 
-      await fs.writeFile(
-        "_up_/resources/pluto-settings.json",
-        JSON.stringify(stngs),
-        {
-          dir: BaseDirectory.Resource,
-        }
-      );
+      await forage.setItem({
+        key: "settings",
+        value: JSON.stringify(stngs),
+      });
     } else {
       await this.load_settings();
     }
   }
 
   async load_settings() {
-    const setting = await fs.readTextFile(
-      "_up_/resources/pluto-settings.json",
-      {
-        dir: BaseDirectory.Resource,
-      }
-    );
+    const setting = await forage.getItem({ key: "settings" })();
 
-    this.settings = JSON.parse(setting);
+    this.settings = JSON.parse(setting as unknown as string);
   }
 
   async save_settings() {
-    await fs.writeTextFile(
-      "_up_/resources/pluto-settings.json",
-      JSON.stringify(this.settings),
-      {
-        dir: BaseDirectory.Resource,
-      }
-    );
+    await forage.setItem({
+      key: "settings",
+      value: JSON.stringify(this.settings),
+    })();
 
     this.settings_check();
   }
