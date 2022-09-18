@@ -1,7 +1,7 @@
 {
   "name": "pluto",
   "private": true,
-  "version": "0.1.3.1-alpha",
+  "version": "0.1.4-alpha",
   "scripts": {
     "setup": "concurrently 'npm:theme-install' 'npm:gitinfo'",
     "watch-mac:themes": "watch 'npm run theme-install' ./resources/themes",

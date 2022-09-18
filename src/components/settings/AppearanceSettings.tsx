@@ -45,10 +45,7 @@ export const AppearanceSettings = () => {
                     value={THEME_AVAILABILITY[
                         plutoLib.settings?.selected_theme!
                     ].toString()}
-                    style={plutoLib.Theme.getClassName(
-                        'modal.settings.theme-select'
-                    )}
-                    className="text-sm rounded-lg block w-full p-3 border-none outline-none"
+                    className="text-black h-22"
                 >
                     {to_array(THEME_AVAILABILITY).map(
                         (x: string, key: number) => (
