@@ -132,8 +132,15 @@
         },
         {
             "id": "nav-button-bar-container",
-            "defaultThemeSettings": {
+            "defaultThemeSettings": {},
+            "hover": {
                 "borderLeft": "2px solid #FE9833"
+            }
+        },
+        {
+            "id": "nav-button-bar-button",
+            "defaultThemeSettings": {
+                "stroke": "white"
             }
         }
     ]

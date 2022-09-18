@@ -14,11 +14,12 @@
     "tauri": "npm run setup && tauri"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.0.2",
+    "@tauri-apps/api": "^1.1.0",
     "eventemitter3": "^4.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.15.1",
+    "react-select": "^5.4.0",
     "react-tooltip": "^4.2.21",
     "recoil": "^0.7.5",
     "style-it": "^2.1.4",
@@ -31,6 +32,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-modal": "^3.13.1",
+    "@types/react-select": "^5.0.1",
     "@types/react-tooltip": "^4.2.4",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.0.0",

@@ -7,9 +7,10 @@
   },
   "package": {
     "productName": "Pluto",
-    "version": "0.1.3"
+    "version": "0.1.4"
   },
   "tauri": {
+    "macOSPrivateApi": true,
     "allowlist": {
       "all": true,
       "fs": {
@@ -23,16 +24,46 @@
         "removeFile": true,
         "renameFile": true,
         "scope": [
-          "$APP/*",
+          "$AUDIO",
+          "$AUDIO/*",
+          "$CACHE",
+          "$CACHE/*",
+          "$CONFIG",
+          "$CONFIG/*",
+          "$DATA",
+          "$DATA/*",
+          "$LOCALDATA",
+          "$LOCALDATA/*",
+          "$DESKTOP",
           "$DESKTOP/*",
+          "$DOCUMENT",
+          "$DOCUMENT/*",
+          "$DOWNLOAD",
+          "$DOWNLOAD/*",
+          "$EXE",
+          "$EXE/*",
+          "$FONT",
+          "$FONT/*",
+          "$HOME",
+          "$HOME/*",
+          "$PICTURE",
+          "$PICTURE/*",
+          "$PUBLIC",
+          "$PUBLIC/*",
+          "$RUNTIME",
+          "$RUNTIME/*",
+          "$TEMPLATE",
+          "$TEMPLATE/*",
+          "$VIDEO",
+          "$VIDEO/*",
           "$RESOURCE",
           "$RESOURCE/*",
-          "$RESOURCE/**",
-          "$RESOURCE/resources",
-          "$RESOURCE/_up_",
-          "$RESOURCE/_up_/*",
-          "$RESOURCE/_up_/**",
-          "$CONFIG/*"
+          "$APP",
+          "$APP/*",
+          "$LOG",
+          "$LOG/*",
+          "$TEMP",
+          "$TEMP/*"
         ]
       }
     },
@@ -86,7 +117,8 @@
         "title": "pluto",
         "minHeight": 500,
         "minWidth": 900,
-        "center": true
+        "center": true,
+        "transparent": true
       }
     ]
   }

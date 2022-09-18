@@ -1,9 +1,9 @@
 [package]
 name = "pluto"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
+version = "0.1.4"
+description = "A lightweight code editor built on rust"
+authors = ["Nathaniel Richards"]
+license = "MIT Modified"
 repository = ""
 edition = "2021"
 rust-version = "1.57"
@@ -11,13 +11,13 @@ rust-version = "1.57"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "1.0.0", features = [] }
+tauri-build = { version = "1.1.1", features = [] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.0.0", features = ["api-all", "devtools"] }
-window-shadows = "0.1.0"
+tauri = { version = "1.0.0", features = ["api-all", "devtools", "macos-private-api"] }
+window-shadows = "0.2.0"
 
 [dependencies.tauri-plugin-store]
 git = "https://github.com/tauri-apps/tauri-plugin-store"
